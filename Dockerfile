@@ -19,8 +19,7 @@ RUN cd /tmp && \
     -D VTK_Group_MPI:BOOL=OFF \
     -D VTK_Group_StandAlone:BOOL=OFF \
     -D VTK_Group_Rendering:BOOL=ON \
-    -D VTK_WRAP_PYTHON=ON \
-    -D VTK_PYTHON_VERSION:STRING=2 \
+    -D VTK_WRAP_PYTHON=OFF \
     . && \
     make -j $(cat /proc/cpuinfo | grep processor | wc -l) && \
     make install && \
