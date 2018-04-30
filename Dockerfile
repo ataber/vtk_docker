@@ -1,5 +1,12 @@
 FROM ataber/trilinos
 
+RUN apt-get update --fix-missing \
+&&  apt-get upgrade -y --force-yes \
+&&  apt-get install -y --force-yes \
+    libosmesa6
+&&  apt-get clean \
+&&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+
 RUN cd /tmp && \
     wget -nv -O- http://www.vtk.org/files/release/7.1/VTK-7.1.0.tar.gz | \
     tar xz && \
