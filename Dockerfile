@@ -2,8 +2,7 @@ FROM ataber/trilinos
 
 RUN apt-get update --fix-missing \
 &&  apt-get upgrade -y --force-yes \
-&&  apt-get install -y --force-yes \
-    libosmesa6
+&&  apt-get install -y --force-yes libosmesa6 \
 &&  apt-get clean \
 &&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
