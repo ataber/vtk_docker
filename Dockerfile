@@ -1,11 +1,5 @@
 FROM ataber/trilinos
 
-RUN apt-get update --fix-missing \
-&&  apt-get upgrade -y --force-yes \
-&&  apt-get install -y --force-yes libosmesa6 \
-&&  apt-get clean \
-&&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
-
 RUN cd /tmp && \
     wget -nv -O- http://www.vtk.org/files/release/7.1/VTK-7.1.0.tar.gz | \
     tar xz && \
@@ -18,10 +12,8 @@ RUN cd /tmp && \
     -D BUILD_TESTING:BOOL=OFF \
     -D BUILD_SHARED_LIBS:BOOL=ON \
     -D VTK_USE_X:BOOL=OFF \
-    -D VTK_OPENGL_HAS_OSMESA:BOOL=ON \
-    -D OSMESA_LIBRARY=/usr/lib/libOSMesa.so.8 \
+    -D VTK_OPENGL_HAS_OSMESA:BOOL=OFF \
     -D OPENGL_INCLUDE_DIR=/usr/include/GL/ \
-    -D OSMESA_INCLUDE_DIR=/usr/include/GL/ \
     -D VTK_RENDERING_BACKEND:STRING=OpenGL \
     -D VTK_Group_MPI:BOOL=OFF \
     -D VTK_Group_StandAlone:BOOL=OFF \
