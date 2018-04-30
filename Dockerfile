@@ -14,6 +14,7 @@ RUN cd /tmp && \
     -D VTK_USE_X:BOOL=OFF \
     -D VTK_OPENGL_HAS_OSMESA:BOOL=ON \
     -D OSMESA_LIBRARY=/usr/lib/libOSMesa.so.8 \
+    -D OPENGL_INCLUDE_DIR=/usr/include/GL/ \
     -D OSMESA_INCLUDE_DIR=/usr/include/GL/ \
     -D VTK_RENDERING_BACKEND:STRING=OpenGL \
     -D VTK_Group_MPI:BOOL=OFF \
