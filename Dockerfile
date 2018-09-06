@@ -1,9 +1,9 @@
 FROM ataber/trilinos
 
 RUN cd /tmp && \
-    wget -nv -O- http://www.vtk.org/files/release/7.1/VTK-7.1.0.tar.gz | \
+    wget -nv -O- http://www.vtk.org/files/release/8.1/VTK-8.1.1.tar.gz | \
     tar xz && \
-    cd VTK-7.1.0 && \
+    cd VTK-8.1.1 && \
     cmake \
     -D CMAKE_BUILD_TYPE:STRING=Release \
     -D CMAKE_INSTALL_PREFIX:STRING=/usr \
@@ -22,4 +22,4 @@ RUN cd /tmp && \
     . && \
     make -j $(cat /proc/cpuinfo | grep processor | wc -l) && \
     make install && \
-    cd .. && rm -rf VTK-7.1.0
+    cd .. && rm -rf VTK-8.1.1
