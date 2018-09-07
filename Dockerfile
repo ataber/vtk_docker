@@ -27,3 +27,6 @@ RUN cd /tmp && \
     make -j $(cat /proc/cpuinfo | grep processor | wc -l) && \
     make install && \
     cd .. && rm -rf VTK-8.1.1
+
+ENV VTK_INCLUDE_DIR /usr/include/vtk-8.1.1
+ENV VTK_LIBRARY_DIR /usr/lib/
