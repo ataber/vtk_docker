@@ -14,7 +14,7 @@ RUN cd /tmp && \
     -D VTK_USE_X:BOOL=OFF \
     -D VTK_OPENGL_HAS_OSMESA:BOOL=OFF \
     -D OPENGL_INCLUDE_DIR=/usr/include/ \
-    -D VTK_RENDERING_BACKEND:STRING=OpenGL \
+    -D VTK_RENDERING_BACKEND:STRING=None \
     -D VTK_Group_MPI:BOOL=OFF \
     -D VTK_Group_StandAlone:BOOL=OFF \
     -D VTK_Group_Rendering:BOOL=OFF \
