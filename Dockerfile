@@ -15,9 +15,14 @@ RUN cd /tmp && \
     -D VTK_INSTALL_NO_DEVELOPMENT:BOOL=ON \
     -D VTK_OPENGL_HAS_OSMESA:BOOL=OFF \
     -D VTK_RENDERING_BACKEND:STRING=None \
-    -D VTK_Group_MPI:BOOL=OFF \
-    -D VTK_Group_StandAlone:BOOL=OFF \
+    -D VTK_Group_MPI:BOOL=ON \
+    -D VTK_Group_StandAlone:BOOL=ON \
     -D VTK_Group_Rendering:BOOL=OFF \
+    -D VTK_Group_Imaging:BOOL=OFF \
+    -D VTK_Group_Qt:BOOL=OFF \
+    -D VTK_Group_Tk:BOOL=OFF \
+    -D VTK_Group_Web:BOOL=OFF \
+    -D VTK_Group_Views:BOOL=OFF \
     -D VTK_WRAP_PYTHON=OFF \
     . && \
     make -j $(cat /proc/cpuinfo | grep processor | wc -l) && \
