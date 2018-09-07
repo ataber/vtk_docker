@@ -17,7 +17,7 @@ RUN cd /tmp && \
     -D VTK_RENDERING_BACKEND:STRING=OpenGL \
     -D VTK_Group_MPI:BOOL=OFF \
     -D VTK_Group_StandAlone:BOOL=OFF \
-    -D VTK_Group_Rendering:BOOL=ON \
+    -D VTK_Group_Rendering:BOOL=OFF \
     -D VTK_WRAP_PYTHON=OFF \
     . && \
     make -j $(cat /proc/cpuinfo | grep processor | wc -l) && \
