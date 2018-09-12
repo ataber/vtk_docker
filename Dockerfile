@@ -6,7 +6,7 @@ RUN cd /tmp && \
     cd VTK-8.1.1 && \
     cmake \
     -D CMAKE_BUILD_TYPE:STRING=Release \
-    -D CMAKE_INSTALL_PREFIX:STRING=/usr \
+    -D CMAKE_INSTALL_PREFIX:STRING=/usr/lib \
     -D BUILD_DOCUMENTATION:BOOL=OFF \
     -D BUILD_EXAMPLES:BOOL=OFF \
     -D BUILD_TESTING:BOOL=OFF \
