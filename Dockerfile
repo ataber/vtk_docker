@@ -5,6 +5,7 @@ RUN cd /tmp && \
     tar xz && \
     cd VTK-8.1.1 && \
     cmake \
+    -D CMAKE_CXX_COMPILER=mpicxx \
     -D CMAKE_BUILD_TYPE:STRING=Release \
     -D CMAKE_INSTALL_PREFIX:STRING=/usr/lib/vtk \
     -D BUILD_DOCUMENTATION:BOOL=OFF \
