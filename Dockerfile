@@ -15,6 +15,7 @@ RUN cd /tmp && \
     -D VTK_USE_X:BOOL=OFF \
     -D VTK_INSTALL_NO_DEVELOPMENT:BOOL=OFF \
     -D VTK_RENDERING_BACKEND:STRING=None \
+    -D VTK_USE_PARALLEL:BOOL=ON \
     -D VTK_Group_MPI:BOOL=ON \
     -D VTK_Group_StandAlone:BOOL=ON \
     -D VTK_Group_Rendering:BOOL=OFF \
