@@ -18,10 +18,10 @@ jobs:
 
       - run:
           name: Build image
-          command: docker build -t ataber/vtk .
+          command: docker build -t ataber/vtk:shared .
 
       - deploy:
           name: Deploy image to Docker Hub
           command: |
             docker login --username ${DOCKER_USER} --password ${DOCKER_PASSWORD}
-            docker push ataber/vtk
+            docker push ataber/vtk:shared
