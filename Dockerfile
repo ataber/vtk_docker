@@ -1,5 +1,14 @@
 FROM ataber/cmake
 
+RUN apt-get update --fix-missing \
+&&  apt-get upgrade -y --force-yes \
+&&  apt-get install -y --force-yes \
+    wget \
+    libopenmpi-dev \
+    openmpi-bin \
+&&  apt-get clean \
+&&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+
 RUN cd /tmp && \
     wget -nv -O- http://www.vtk.org/files/release/8.1/VTK-8.1.1.tar.gz | \
     tar xz && \
