@@ -1,20 +1,10 @@
 FROM ataber/cmake
 
-RUN apt-get update --fix-missing \
-&&  apt-get upgrade -y --force-yes \
-&&  apt-get install -y --force-yes \
-    wget \
-    libopenmpi-dev \
-    openmpi-bin \
-&&  apt-get clean \
-&&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
-
 RUN cd /tmp && \
     wget -nv -O- http://www.vtk.org/files/release/8.1/VTK-8.1.1.tar.gz | \
     tar xz && \
     cd VTK-8.1.1 && \
     cmake \
-    -D CMAKE_CXX_COMPILER=mpicxx \
     -D CMAKE_BUILD_TYPE:STRING=Release \
     -D CMAKE_INSTALL_PREFIX:STRING=/usr/lib/vtk \
     -D BUILD_DOCUMENTATION:BOOL=OFF \
@@ -24,7 +14,7 @@ RUN cd /tmp && \
     -D VTK_USE_X:BOOL=OFF \
     -D VTK_INSTALL_NO_DEVELOPMENT:BOOL=OFF \
     -D VTK_RENDERING_BACKEND:STRING=None \
-    -D VTK_USE_PARALLEL:BOOL=ON \
+    -D VTK_USE_PARALLEL:BOOL=OFF \
     -D VTK_Group_MPI:BOOL=ON \
     -D VTK_Group_StandAlone:BOOL=ON \
     -D VTK_Group_Rendering:BOOL=OFF \
