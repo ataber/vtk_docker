@@ -4,7 +4,7 @@ RUN cd /tmp && \
     wget -nv -O- http://www.vtk.org/files/release/8.1/VTK-8.1.1.tar.gz | \
     tar xz && \
     cd VTK-8.1.1 && \
-    cmake \
+    CXX=mpicxx cmake \
     -D CMAKE_BUILD_TYPE:STRING=Release \
     -D CMAKE_INSTALL_PREFIX:STRING=/usr/lib/vtk \
     -D BUILD_DOCUMENTATION:BOOL=OFF \
@@ -15,7 +15,7 @@ RUN cd /tmp && \
     -D VTK_INSTALL_NO_DEVELOPMENT:BOOL=OFF \
     -D VTK_RENDERING_BACKEND:STRING=None \
     -D VTK_USE_PARALLEL:BOOL=OFF \
-    -D VTK_Group_MPI:BOOL=OFF \
+    -D VTK_Group_MPI:BOOL=ON \
     -D VTK_Group_StandAlone:BOOL=ON \
     -D VTK_Group_Rendering:BOOL=OFF \
     -D VTK_Group_Imaging:BOOL=OFF \
