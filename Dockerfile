@@ -4,7 +4,7 @@ RUN cd /tmp && \
     wget -nv -O- http://www.vtk.org/files/release/8.1/VTK-8.1.1.tar.gz | \
     tar xz && \
     cd VTK-8.1.1 && \
-    cmake \
+    CXX=mpicxx cmake \
     -D CMAKE_BUILD_TYPE:STRING=Release \
     -D CMAKE_INSTALL_PREFIX:STRING=/usr/lib/vtk \
     -D BUILD_DOCUMENTATION:BOOL=OFF \
