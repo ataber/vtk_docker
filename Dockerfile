@@ -25,7 +25,7 @@ RUN cd /tmp && \
     -D VTK_Group_Views:BOOL=OFF \
     -D VTK_WRAP_PYTHON=OFF \
     . && \
-    make -j $(cat /proc/cpuinfo | grep processor | wc -l) && \
+    make -j $(cat /proc/cpuinfo | grep processor | wc -l) VERBOSE=1 && \
     make install && \
     cd .. && rm -rf VTK-8.1.1
 ENV VTK_DIR /usr/lib/vtk
